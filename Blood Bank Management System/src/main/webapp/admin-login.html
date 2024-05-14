@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #edf2f7; /* Light gray background */
+        }
+        .login-box {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+        }
+        .login-box:hover {
+            transform: translateY(-5px); /* Slightly raise the box */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Increase shadow for lifting effect */
+        }
+        .form-input {
+            transition: border-color 0.3s ease; /* Smooth transition for input focus */
+        }
+        .form-input:focus {
+            border-color: #4a5568; /* Darken border on focus */
+        }
+        .submit-btn {
+            transition: background-color 0.3s ease; /* Smooth background transition on hover */
+        }
+        .submit-btn:hover {
+            background-color: #2b6cb0; /* Darken button on hover */
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+	
+    <div class="login-box bg-white p-8 rounded-lg max-w-sm w-full">
+        <h2 class="text-2xl font-semibold text-center text-gray-800 mb-8">Admin Login</h2>
+        <form action="AdminLoginServlet" method="post" class="space-y-6">
+            <div>
+                <label for="username" class="text-sm font-medium text-gray-700">Username</label>
+                <input type="text" id="username" name="username" required class="mt-1 p-3 w-full border rounded-md form-input">
+            </div>
+            <div>
+                <label for="password" class="text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" name="password" required class="mt-1 p-3 w-full border rounded-md form-input">
+            </div>
+            <button type="submit" class="submit-btn w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-md">Login</button>
+        </form>
+    </div>
+</body>
+</html>

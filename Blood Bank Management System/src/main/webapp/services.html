@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - PulseGuard Tailwind Network</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+     <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+   <nav class="bg-blue-300 text-red-700 z-10 p-4 fade-in relative">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="font-semibold text-xl">PulseGuard Tailwind Network</a>
+        <div class="hidden md:flex space-x-4">
+            <a href="index.html" class="hover:text-red-300">Home</a>
+            <a href="about.html" class="hover:text-red-300">About</a>
+            <a href="services.html" class="hover:text-red-300 text-white">Services</a>
+            <div class="group inline-block relative">
+                <button class="inline-flex items-center">
+                    <span class="mr-1">Donor</span>
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5.516 7.548c-2-2-5.516-1.12-5.516 3.006 0 4.768 7.483 9.675 7.483 9.675s7.483-4.907 7.483-9.675c0-4.125-3.516-5.006-5.516-3.006-1.493 1.493-.945 4.024-2.967 4.024-2.022 0-1.474-2.531-2.967-4.024z"/></svg>
+                </button>
+                <ul class="absolute hidden text-gray-700 pt-1 group-hover:block">
+                    <li><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="registration.html">Donor Registration</a></li>
+                    <li><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="registration.html">Donor Login</a></li>
+                </ul>
+            </div>
+            <a href="admin-login.html" class="hover:text-red-300">Admin Login</a>
+            <a href="contact.html" class="hover:text-red-300">Contact</a>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+            <button class="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu hidden">
+        <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
+        <a href="about.html" class="block py-2 px-4 text-sm hover:bg-gray-200">About</a>
+        <a href="services.html" class="block py-2 px-4 text-sm hover:bg-gray-200 text-white">Services</a>
+        <a href="registration.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Donor Registration</a>
+        <a href="registration.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Donor Login</a>
+        <a href="admin-login.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Admin Login</a>
+        <a href="contact.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
+    </div>
+</nav>
+<script>
+    // Toggle mobile menu
+    document.querySelector('.mobile-menu-button').addEventListener('click', function () {
+        document.querySelector('.mobile-menu').classList.toggle('hidden');
+    });
+</script>
+
+
+    <header class="bg-blue-500 text-white text-center p-12">
+        <h1 class="text-4xl font-bold mb-2">Our Services</h1>
+        <p class="text-xl">Explore the services we offer to help save lives</p>
+    </header>
+
+    <section class="container mx-auto p-8 fade-in">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+             <div class="bg-white rounded-lg shadow-lg overflow-hidden service-card">
+                <img src="img/blood-donation.jpg" alt="Service 1" class="w-full h-48 object-cover object-center">
+                <div class="p-6">
+                    <h2 class="font-bold text-xl mb-2">Blood Donation</h2>
+                    <p class="text-gray-700 text-base">
+                        Learn how you can become a donor and help save lives. Your contribution is invaluable.
+                    </p>
+                </div>
+            </div>
+            <!-- Service 2 -->
+             <div class="bg-white rounded-lg shadow-lg overflow-hidden service-card">
+				        <img src="img/blood-testing.jpg" alt="Service 2" class="w-full h-48 object-cover object-center">
+                <div class="p-6">
+                    <h2 class="font-bold text-xl mb-2">Blood Testing</h2>
+                    <p class="text-gray-700 text-base">
+                        Comprehensive testing to ensure safety and compatibility. Trust our thorough screening process.
+                    </p>
+                </div>
+            </div>
+            <!-- Service 3 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden service-card">
+			         <img src="img/Emergency-Services.jpg" alt="Service 3" class="w-full h-48 object-cover object-center">
+                <div class="p-6">
+                    <h2 class="font-bold text-xl mb-2">Emergency Services</h2>
+                    <p class="text-gray-700 text-base">
+                        Rapid response and support for medical emergencies. We're here when you need us most.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-500 text-white text-center p-4">
+        <p>PulseGuard Tailwind Network © 2024</p>
+    </footer>
+
+    <script>
+        // Add any JavaScript here
+    </script>
+</body>
+</html>

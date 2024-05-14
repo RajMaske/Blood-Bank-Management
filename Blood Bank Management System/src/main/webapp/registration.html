@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Donor Registration & Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .form-enter {
+            transition: transform 0.5s, opacity 0.5s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .form-enter-active {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 flex justify-center items-center w-full h-screen" style="background-image: url('https://images.unsplash.com/photo-1576765607924-dc8425a8e7e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center;">
+    <div class="w-full max-w-lg p-8 space-y-8 bg-white bg-opacity-90 rounded-lg shadow-2xl">
+        <div class="text-center">
+            <h2 class="mt-6 text-3xl font-extrabold text-gray-900">Join Our Donor Community</h2>
+            <p class="mt-2 text-sm text-gray-600">Your donation can save lives. Please log in or sign up to make a difference.</p>
+        </div>
+        <div id="formsContainer" class="mt-8 space-y-6 animate-opacity">
+            <!-- Login and Registration Forms -->
+            <div id="loginForm" class="form-enter-active">
+    <!-- Login Form Here -->
+    <form action="views/login.jsp" method="post" class="space-y-6">
+        <div class="rounded-md shadow-sm -space-y-px">
+            <div>
+                <label for="email-address" class="sr-only">Email address</label>
+                <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+            </div>
+            <div>
+                <label for="password" class="sr-only">Password</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Sign in
+            </button>
+        </div>
+    </form>
+</div>
+<div id="registerForm" class="hidden form-enter">
+    <!-- Registration Form Here -->
+    <form action="views/register.jsp" method="post" class="space-y-6">
+        <div class="rounded-md shadow-sm -space-y-px">
+            <div>
+                <label for="name" class="sr-only">Full Name</label>
+                <input id="name" name="name" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Full Name">
+            </div>
+            <div>
+                <label for="email" class="sr-only">Email address</label>
+                <input id="email" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+            </div>
+            <div>
+                <label for="password" class="sr-only">Password</label>
+                <input id="password" name="password" type="password" autocomplete="new-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+            </div>
+            <!-- Blood Group Field -->
+            <div>
+                <label for="blood_group" class="sr-only">Blood Group</label>
+                <select id="blood_group" name="blood_group" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+                    <option value="">Select Blood Group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                Register
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function toggleForm(formType) {
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+
+        if (formType === 'login') {
+            loginForm.classList.remove('hidden', 'form-enter');
+            registerForm.classList.add('hidden');
+        } else {
+            registerForm.classList.remove('hidden', 'form-enter');
+            loginForm.classList.add('hidden');
+        }
+    }
+</script>
+
+            <!-- Toggle between them with JavaScript as defined -->
+        </div>
+        <!-- Toggle Buttons for Forms -->
+        <div class="flex justify-center gap-4">
+            <button onclick="toggleForm('login')" class="px-6 py-2 border rounded-md text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white transition-colors duration-300">Log In</button>
+            <button onclick="toggleForm('register')" class="px-6 py-2 border rounded-md text-green-600 border-green-600 hover:bg-green-600 hover:text-white transition-colors duration-300">Sign Up</button>
+        </div>
+    </div>
+    <script>
+        // JavaScript for toggling forms
+    </script>
+</body>
+</html>
